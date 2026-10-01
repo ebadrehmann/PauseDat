@@ -26,6 +26,7 @@ struct NotificationDemo: View {
                     Text("Notifications are disabled")
                     
                     Button("Enable") {
+                        // must execute in main thread
                         DispatchQueue.main.async{
                             // open settings
                             UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
